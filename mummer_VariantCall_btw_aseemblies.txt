@@ -23,6 +23,20 @@
 ~/software/Mummer4/mummer-4.0.0beta2/dnadiff -d N16961_Pacbio-Ncbi.filter
 
 
+# in loop between all files in a pop.
+
+1. Delta file
+for pri in $(ls *.fna); do echo ¯\_\(\ツ\)_/¯$(echo $pri | cut -d '_' -f3); for sec in $(ls *.fna);  do echo @@@@@@$(echo $sec | cut -d '_' -f3)@@@@@@ ; ~/software/Mummer4/mummer-4.0.0beta2/nucmer --prefix=$(echo $pri | cut -d '_' -f3)@$(echo $sec | cut -d '_' -f3) $pri $sec; done; done
+
+2. delete conflicting repeats
+for i in $(ls *.delta); do echo ¯\_\(\ツ\)_/¯$(echo $i | cut -d '_' -f3)¯\_\(\ツ\)_/¯; ~/software/Mummer4/mummer-4.0.0beta2/delta-filter -r -q $i > $(echo $i| cut -d'.' -f1).filter; done 
+3. Make comparison
+for i in $(ls *.filter); do echo ¯\_\(\ツ\)_/¯$(echo $i | cut -d '_' -f3)¯\_\(\ツ\)_/¯; ~/software/Mummer4/mummer-4.0.0beta2/dnadiff -d $i; done 
+
+4 . Rename out.report
+for folder in $(ls -d */); do echo "-> "$folder; cd $folder; a=0;for i in $(ls out.report); do echo ¯\_\(\ツ\)_/¯$i¯\_\(\ツ\)_/¯; mv $i $(echo $folder).report; done; cd .. ; done
+
+
 ######3 MAUVE
 ##########################################
 
