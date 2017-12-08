@@ -1,0 +1,38 @@
+######################################################################  Whole genome comparison between alignements ##############################################################################################
+#########################################################SNP ANALYSIS
+####################################################################################
+
+
+
+	######3 MUMMER
+##########################################
+
+# create comparison delta file
+
+~/software/Mummer4/mummer-4.0.0beta2/nucmer --prefix=N16961_Pacbio-Ncbi Vibrio_cholerae_N16961_BloLabStrain_PacBio.fasta Vibrio_cholerae_N16961_NCBI_Complete.fna
+
+
+# delete conflicting repears copies
+
+
+~/software/Mummer4/mummer-4.0.0beta2/delta-filter -r -q N16961_Pacbio-Ncbi.delta > N16961_Pacbio-Ncbi.filter
+
+
+# Make comparison
+
+~/software/Mummer4/mummer-4.0.0beta2/dnadiff -d N16961_Pacbio-Ncbi.filter
+
+
+######3 MAUVE
+##########################################
+
+MAKE MULTIPLE ALIGNEMENT
+
+2. CREATE SNP FILE BY CLICKING ON EXPORT. PUT SAME NAME WITH EXTENSION .SNP
+
+3. IN R USE SCRIPT SNP_MAUVE_plot.R  
+
+				- > Create matrix of SNP between STRAINS
+				- > Create Network of SNP 
+				- > Create hierarchical clustering dendogram 
+				
