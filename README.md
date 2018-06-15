@@ -4,7 +4,7 @@ Scripts containing information of SNP analysis and Vizualsation.
 
 
 
-1. MUMMER
+# 1. MUMMER
 
 - For a single comparison A-B
 
@@ -42,7 +42,7 @@ Scripts containing information of SNP analysis and Vizualsation.
           for i in $(ls *.filter); do echo ¯\_\(\ツ\)_/¯$(echo $i | cut -d '_' -f3)¯\_\(\ツ\)_/¯; ~/software/Mummer4/mummer-4.0.0beta2/dnadiff -d $i; mv out.report $(echo $i | cut -d'.' -f1).report;mv out.rdiff $(echo $i | cut -d'.' -f1).rdiff; mv out.qdiff $(echo $i | cut -d'.' -f1).qdiff; mv out.unref $(echo $i | cut -d'.' -f1).unref; mv out.unqry $(echo $i | cut -d'.' -f1).unqry;  mv out.1delta $(echo $i | cut -d'.' -f1).1delta;  mv out.mdelta $(echo $i | cut -d'.' -f1).mdelta; mv out.1coords $(echo $i | cut -d'.' -f1).1coords; mv out.mcoords $(echo $i | cut -d'.' -f1).mcoords; mv out.snps $(echo $i | cut -d'.' -f1).snps; done 
 
 
-2. MAUVE
+# 2. MAUVE
 
 - MAKE MULTIPLE ALIGNEMENT
 
